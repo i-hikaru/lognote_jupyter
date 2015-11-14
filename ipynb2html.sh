@@ -1,7 +1,8 @@
 #!/bin/bash
 
-IPYNB_DIR=`pwd`
-HTML_DIR=$IPYNB_DIR/html
+CURRENT_DIR=`pwd`
+IPYNB_DIR=$CURRENT_DIR/ipynb
+HTML_DIR=$CURRENT_DIR/html
 
 files="${IPYNB_DIR}/note_*.ipynb"
 for fpath in $files; do
