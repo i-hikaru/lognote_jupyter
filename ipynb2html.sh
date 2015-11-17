@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_DIR=`pwd`
+CURRENT_DIR=$HOME/ipython_notebook/lognote_jupyter
 IPYNB_DIR=$CURRENT_DIR/ipynb
 HTML_DIR=$CURRENT_DIR/html
 
@@ -11,6 +11,8 @@ for fpath in $files; do
 	 -a $HTML_DIR/${fname_ext%.*}.html -nt $fpath ]; then
 	:
     else
-    	jupyter nbconvert --to html $fpath && mv ${fname_ext%.*}.html html
+	cd $CURRENT_DIR && \
+    	    jupyter nbconvert --to html $fpath && \
+	    mv ${fname_ext%.*}.html html
     fi
 done
